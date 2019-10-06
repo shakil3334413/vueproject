@@ -128,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 </div>
-<!-- ./wrapper -->
+
 <script src="/js/app.js"></script>
 </body>
 </html>
