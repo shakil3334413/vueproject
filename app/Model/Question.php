@@ -10,7 +10,7 @@ class Question extends Model
         return $this->belongsTo(User::class);
     }
     public function replys(){
-        return $this->hasMany(Reply:class);
+        return $this->hasMany(Reply::class);
     }
     public function catagory(){
         return $this->belongsTo(Catagory::class);
