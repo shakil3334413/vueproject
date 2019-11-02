@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Catagory;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CatagoryController extends Controller
 {
@@ -14,7 +15,7 @@ class CatagoryController extends Controller
      */
     public function index()
     {
-        //
+        return Catagory::latest()->get();
     }
 
     /**
@@ -35,7 +36,8 @@ class CatagoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Catagory::create($request->all());
+        return response('Created',Response::HTTP_CREATED);
     }
 
     /**
@@ -46,7 +48,7 @@ class CatagoryController extends Controller
      */
     public function show(Catagory $catagory)
     {
-        //
+        return $catagory;
     }
 
     /**
@@ -67,9 +69,10 @@ class CatagoryController extends Controller
      * @param  \App\Model\Catagory  $catagory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Catagory $catagory)
+    public function update(Request $request,Catagory $catagory)
     {
-        //
+        $catagory->update($request->all());
+        return response('Update',Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -80,6 +83,7 @@ class CatagoryController extends Controller
      */
     public function destroy(Catagory $catagory)
     {
-        //
+        Catagory::destroy($catagory);
+        return response('DELETE',response::HTTP_NO_CONTENT);
     }
 }
